@@ -1,0 +1,13 @@
+{
+  "name": "drawing-tool",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Jonathan Beliën",
+    "email": "jbe@geo6.be"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "openlayers": "^4.2.0"
+  }
+}

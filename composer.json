@@ -1,0 +1,14 @@
+{
+  "name": "geo6/drawing-tool",
+  "description": "Draw an area and export it using ogr2ogr in several formats",
+  "type": "project",
+  "license": "GPL-3.0",
+  "authors": [
+      {
+          "name": "Jonathan Beliën"
+      }
+  ],
+  "require": {
+      "symfony/yaml": "^3.2"
+  }
+}

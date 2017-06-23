@@ -1,0 +1,57 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.map {
+    height: 100%;
+}
+.ol-attribution.ol-logo-only,
+.ol-attribution.ol-uncollapsible {
+  max-width: calc(100% - 3em);
+  height: 1.5em;
+}
+.ol-control button, .ol-attribution, .ol-scale-line-inner {
+  font-family: 'Lucida Grande',Verdana,Geneva,Lucida,Arial,Helvetica,sans-serif;
+}
+
+#main {
+  top: 15px;
+  right: 15px;
+  width: 20%;
+  min-width: 100px;
+}
+#main > h1 {
+  margin-top: 0;
+}
+#main > .download {
+  margin-top: 10px;
+  border-top: 1px solid #808080;
+  padding-top: 10px;
+}
+.overlay {
+  position: absolute;
+  z-index: 999;
+  background: rgba(255,255,255,.8);
+  border-radius: 4px;
+  font-family: 'Lucida Grande',Verdana,Geneva,Lucida,Arial,Helvetica,sans-serif;
+  margin: 0;
+  padding: 10px;
+  font-size: .7rem;
+  line-height: 1.375em;
+  color: #000;
+  text-shadow: 0 0 2px #fff;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+.form-group > label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.form-group > button,
+.form-group > select {
+  width: 100%;
+}
