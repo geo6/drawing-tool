@@ -1,10 +1,10 @@
 <?php
-require __DIR__.'/vendor/autoload.php';
-require 'fn.php';
+require '../vendor/autoload.php';
+require '../fn.php';
 
 use Symfony\Component\Yaml\Yaml;
 
-$config = Yaml::parse(file_get_contents(__DIR__.'/config.yml'));
+$config = Yaml::parse(file_get_contents('../config.yml'));
 
 if (isset($_GET['id'])) {
   if (file_exists(sys_get_temp_dir().'/drawing-tool/'.$_GET['id']) && is_dir(sys_get_temp_dir().'/drawing-tool/'.$_GET['id'])) {
