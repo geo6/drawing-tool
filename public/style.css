@@ -24,11 +24,17 @@ html, body {
 #main > h1 {
   margin-top: 0;
 }
-#main > .download {
+#main-download {
   margin-top: 10px;
   border-top: 1px solid #808080;
   padding-top: 10px;
 }
+#main-infos {
+  margin: 10px 0;
+  border-top: 1px solid #808080;
+  padding-top: 10px;
+}
+
 .overlay {
   position: absolute;
   z-index: 999;

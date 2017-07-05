@@ -8,12 +8,13 @@
   },
   "scripts": {
     "build": "browserify index.js | uglifyjs --compress --output public/drawing-tool.js",
-    "start": "watchify index.js --outfile public/drawing-tool.js"
+    "start": "watchify index.js --verbose --outfile public/drawing-tool.js"
   },
   "devDependencies": {
     "browserify": "^14.4.0",
     "jquery": "^3.2.1",
     "openlayers": "^4.2.0",
+    "proj4": "^2.4.3",
     "uglify-js": "^3.0.23",
     "watchify": "^3.9.0"
   }

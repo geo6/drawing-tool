@@ -40,6 +40,15 @@
             </select>
           </div>
 
+          <div id="main-infos">
+            <div id="main-infos-area" style="display: none;">
+              <strong><?= _('Area') ?> :</strong> <span></span>
+            </div>
+            <div id="main-infos-radius" style="display: none;">
+              <strong><?= _('Radius') ?> :</strong> <span></span>
+            </div>
+          </div>
+
           <div class="form-group">
             <button type="submit" id="btn-create-export" disabled="disabled"><?= _('Create export') ?></button>
           </div>
