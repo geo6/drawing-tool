@@ -3,6 +3,7 @@ var ol = require("openlayers");
 var proj4 = require("proj4");
 
 var exportZIP = require("./export.js");
+var geocode = require("./geocode.js");
 var draw = require("./draw.js");
 var municipality = require("./municipality.js");
 
@@ -22,4 +23,5 @@ $(document).ready(function () {
   global.interaction = draw.addInteraction();
 
   $("#main > form").on("submit", exportZIP);
+  $("#gc > form").on("submit", geocode);
 });
