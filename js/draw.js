@@ -55,8 +55,8 @@ exports.onChange = function () {
  *
  */
 exports.addInteraction = function () {
-  var draw;
-  var modify;
+  var draw = null;
+  var modify = null;
 
   if ($("#geometry").val() !== "") {
     draw = new ol.interaction.Draw({
@@ -68,7 +68,7 @@ exports.addInteraction = function () {
     draw.on("drawstart", function (event) {
       global.features.clear();
 
-      listener = event.feature.getGeometry().on("change", function(event) {
+      var listener = event.feature.getGeometry().on("change", function(event) {
         var geom = event.target;
         var output;
         var radius;

@@ -7,8 +7,8 @@ var format = require("./format.js");
  *
  */
 exports.load = function (callback) {
-  var municipalitySource;
-  var municipalityLayer;
+  var municipalitySource = null;
+  var municipalityLayer = null;
 
   $.getJSON("./data/municipalities.json", function (json) {
     municipalitySource = new ol.source.Vector({

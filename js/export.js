@@ -7,7 +7,7 @@ module.exports = function (event) {
   $("#main-download").remove();
 
   var featuresClean = new ol.Collection();
-  features.forEach(function (feature) {
+  global.features.forEach(function (feature) {
     var featureClean = $.extend(true, {}, feature);
 
     if (featureClean.getGeometry() instanceof ol.geom.Circle) {
@@ -32,7 +32,7 @@ module.exports = function (event) {
       if (typeof json.validGeometry !== "undefined") {
         $("#main-download").append("<p><strong>Warning:</strong> Your geometry was validated by PostGIS.</p>");
 
-        var array = features.getArray();
+        var array = global.features.getArray();
         for (var i = 0; i < json.validGeometry.length; i++) {
           var geom = (new ol.format.GeoJSON()).readGeometry(json.validGeometry[i], {
             dataProjection: "EPSG:4326",
