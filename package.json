@@ -1,6 +1,6 @@
 {
   "name": "drawing-tool",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "author": {
     "name": "Jonathan Beliën",
@@ -15,6 +15,7 @@
     "browserify": "^14.4.0",
     "jquery": "^3.2.1",
     "openlayers": "^4.2.0",
+    "proj4": "^2.4.3",
     "uglify-js": "^3.0.23",
     "watchify": "^3.9.0"
   }
