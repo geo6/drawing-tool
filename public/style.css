@@ -51,15 +51,19 @@ body,
 
 #gc {
   margin-top: 15px;
+  overflow-x: hidden;
 }
 #gc > h2 {
   margin-top: 0;
 }
 #gc-result > ul {
-  padding-left: 15px;
+  padding-left: 0;
 }
 #gc-result > ul > li {
   cursor: pointer;
+  padding: 3px 0px 3px 23px;
+  list-style: none;
+  margin: 0;
 }
 #gc-result > ul > li:hover {
   color: #808080;

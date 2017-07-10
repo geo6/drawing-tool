@@ -67,7 +67,7 @@
             </div>
           </form>
           <div id="gc-result"></div>
-          <div style="text-align: right; font-size: smaller;">Data © <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a></div>
+          <div style="text-align: right; font-size: smaller;">Data © <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</div>
         </div>
       </div>
     </div>
