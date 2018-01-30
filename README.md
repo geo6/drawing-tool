@@ -1,6 +1,3 @@
-[![Build Status](https://scrutinizer-ci.com/g/geo6/drawing-tool/badges/build.png?b=master)](https://scrutinizer-ci.com/g/geo6/drawing-tool/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geo6/drawing-tool/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geo6/drawing-tool/?branch=master)
-
 # Drawing tool
 
 Easy tool to draw and export the result in several formats using `ogr2ogr`.
