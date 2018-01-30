@@ -9,6 +9,6 @@
       }
   ],
   "require": {
-      "symfony/yaml": "^3.2"
+      "symfony/yaml": "^4.0"
   }
 }
