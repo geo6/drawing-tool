@@ -16,7 +16,7 @@
     "jquery": "3.3.1",
     "openlayers": "4.6.4",
     "proj4": "2.4.4",
-    "uglify-js": "3.3.14",
+    "uglify-js": "3.3.15",
     "watchify": "3.11.0"
   }
 }
