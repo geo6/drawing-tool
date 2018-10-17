@@ -11,7 +11,9 @@ var that = this;
 exports.featuresLoad = function () {
   var features = new ol.Collection();
   var featureOverlay = new ol.layer.Vector({
-    source: new ol.source.Vector({features: features}),
+    source: new ol.source.Vector({
+      features: features
+    }),
     style: new ol.style.Style({
       fill: new ol.style.Fill({
         color: "rgba(255, 255, 255, 0.5)"
@@ -68,7 +70,7 @@ exports.addInteraction = function () {
     draw.on("drawstart", function (event) {
       global.features.clear();
 
-      var listener = event.feature.getGeometry().on("change", function(event) {
+      var listener = event.feature.getGeometry().on("change", function (event) {
         var geom = event.target;
         var output;
         var radius;

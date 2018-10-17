@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Drawing Tool</title>
-    <link rel="stylesheet" href="../node_modules/openlayers/dist/ol.css" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="css/ol.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
   <body>
     <div id="map" class="map">

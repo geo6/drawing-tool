@@ -27,10 +27,10 @@ module.exports = function (event) {
             $(li).css("background", "url(" + item.icon + ") no-repeat left");
           }
 
-          $(li).
-            attr("title", item.class + " : " + item.type).
-            append(item.display_name).
-            data({
+          $(li)
+            .attr("title", item.class + " : " + item.type)
+            .append(item.display_name)
+            .data({
               "lat": parseFloat(item.lat),
               "lng": parseFloat(item.lon)
             });
@@ -41,15 +41,15 @@ module.exports = function (event) {
             var data = $(this).data();
 
             if (item.class !== "boundary") {
-              global.map.getView().
-                animate({
+              global.map.getView()
+                .animate({
                   "center": ol.proj.fromLonLat([data.lng, data.lat]),
                   "duration": 0,
                   "zoom": 18
                 });
             } else {
-              global.map.getView().
-                fit(ol.proj.transformExtent([parseFloat(item.boundingbox[2]), parseFloat(item.boundingbox[0]), parseFloat(item.boundingbox[3]), parseFloat(item.boundingbox[1])], "EPSG:4326", global.map.getView().getProjection()), {
+              global.map.getView()
+                .fit(ol.proj.transformExtent([parseFloat(item.boundingbox[2]), parseFloat(item.boundingbox[0]), parseFloat(item.boundingbox[3]), parseFloat(item.boundingbox[1])], "EPSG:4326", global.map.getView().getProjection()), {
                   "minResolution": 18
                 });
             }

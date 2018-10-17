@@ -1,22 +1,20 @@
 {
   "name": "drawing-tool",
-  "version": "1.2.2",
   "private": true,
   "author": {
     "name": "Jonathan Beliën",
     "email": "jbe@geo6.be"
   },
   "scripts": {
-    "postinstall": "npm run build",
-    "build": "browserify js/index.js | uglifyjs --compress --output public/drawing-tool.js",
-    "start": "watchify js/index.js --verbose --outfile public/drawing-tool.js"
+    "build": "browserify js/index.js | uglifyjs --compress --output public/js/drawing-tool.js",
+    "start": "watchify js/index.js --verbose --outfile public/js/drawing-tool.js"
   },
   "devDependencies": {
-    "browserify": "16.2.3",
-    "jquery": "3.3.1",
-    "openlayers": "4.6.5",
-    "proj4": "2.5.0",
-    "uglify-js": "3.4.9",
-    "watchify": "3.11.0"
+    "browserify": "^16.2.3",
+    "jquery": "^3.3.1",
+    "openlayers": "^4.6.5",
+    "proj4": "^2.5.0",
+    "uglify-js": "^3.4.9",
+    "watchify": "^3.11.0"
   }
 }

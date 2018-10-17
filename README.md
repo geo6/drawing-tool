@@ -20,7 +20,7 @@ If you want to export the geometry with several Spatial Reference Systems (SRS),
 
 ### Example
 
-```
+```yaml
 ---
 postgresql:
   host: "localhost"

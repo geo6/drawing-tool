@@ -10,12 +10,14 @@ module.exports = function () {
     layers: [
       new ol.layer.Tile({
         source: new ol.source.OSM({
-          url: "//tile.osm.be/osmbe/{z}/{x}/{y}.png",
-          attributions: [ ol.source.OSM.ATTRIBUTION, "Tiles courtesy of <a href=\"https://geo6.be/\">GEO-6</a>" ]
+          url: "https://tile.osm.be/osmbe/{z}/{x}/{y}.png",
+          attributions: [ol.source.OSM.ATTRIBUTION, "Tiles courtesy of <a href=\"https://geo6.be/\">GEO-6</a>"]
         })
       })
     ],
-    controls: ol.control.defaults({attribution: false}).extend([attribution, scale]),
+    controls: ol.control.defaults({
+      attribution: false
+    }).extend([attribution, scale]),
     target: "map",
     view: new ol.View({
       center: ol.proj.fromLonLat([4.45, 50.5157]),
