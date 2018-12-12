@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>Drawing Tool</title>
-    <link rel="stylesheet" href="css/ol.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="./drawing-tool.css" type="text/css">
   </head>
   <body>
     <div id="map" class="map">
@@ -58,7 +57,7 @@
 
         <div id="gc" class="overlay">
           <h2><?= _('Geocoder') ?></h2>
-          <form action="export.php" method="post" autocomplete="off">
+          <form autocomplete="off">
             <div class="form-group">
               <input type="text" name="search" id="gc-search">
             </div>
@@ -67,12 +66,11 @@
             </div>
           </form>
           <div id="gc-result"></div>
-          <div style="text-align: right; font-size: smaller;">Data © <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</div>
+          <div style="text-align: right; font-size: smaller;">Data © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</div>
         </div>
       </div>
     </div>
-    <script src="js/drawing-tool.js"></script>
-    <script>
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="./drawing-tool.js"></script>
   </body>
 </html>

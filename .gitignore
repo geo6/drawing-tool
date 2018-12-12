@@ -1,3 +1,5 @@
+.cache/
+.vscode/
 node_modules/
 vendor/
 config.yml

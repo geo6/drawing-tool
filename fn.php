@@ -1,38 +1,6 @@
 <?php
-/**
- *
- */
-function ogr2ogr($format, $dst, $src, $params = NULL, &$stdout = NULL, &$stderr = NULL) {
-  if (is_array($src)) {
-    $source = escapeshellarg($src[0]);
-    $source .= ' ';
-    $layers = explode(' ', $src[1]); foreach ($layers as $l) $source .= escapeshellarg($l);
-  } else {
-    $source = escapeshellarg($src);
-  }
 
-  $descriptorspec = array(
-    0 => array('pipe', 'r'), // stdin
-    1 => array('pipe', 'w'), // stdout
-    2 => array('pipe', 'w')  // stderr
-  );
-
-  $process = proc_open('ogr2ogr -f '.escapeshellarg($format).' '.$params.' '.escapeshellarg($dst).' '.$source, $descriptorspec, $pipes);
-
-  if (is_resource($process)) {
-    $stdout = stream_get_contents($pipes[1]);
-    fclose($pipes[1]);
-
-    $stderr = stream_get_contents($pipes[2]) ;
-    fclose($pipes[2]);
-
-    $return_value = proc_close($process);
-  } else {
-    return FALSE;
-  }
-
-  return ($return_value === 0);
-}
+use Geo6\GDAL\ogr2ogr;
 
 /**
  *
@@ -67,16 +35,15 @@ function export($source, $file, $format, $srs = 'EPSG:4326', $params = array()) 
   try {
     if (!file_exists($dir) || !is_dir($dir)) { mkdir($dir, 0777, TRUE); }
 
-    $params = '';
+    $ogr2ogr = new ogr2ogr($file, $source);
+    $ogr2ogr->setOption('f', $format);
+
     if ($srs !== 'EPSG:4326') {
-      $params .= ' -s_srs EPSG:4326';
-      $params .= ' -t_srs '.$srs;
+      $ogr2ogr->setOption('s_srs', 'EPSG:4326');
+      $ogr2ogr->setOption('t_srs', $srs);
     }
 
-    $ogr = ogr2ogr($format, $file, $source, $params, $stdout, $stderr);
-    if ($ogr === FALSE) {
-      throw new Exception($stderr);
-    }
+    $ogr2ogr->run();
   } catch (Exception $e) {
     $warnings[] = $e->getMessage();
   }
