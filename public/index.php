@@ -58,7 +58,7 @@
 
         <div id="gc" class="overlay">
           <h2><?= _('Geocoder') ?></h2>
-          <form action="export.php" method="post" autocomplete="off">
+          <form autocomplete="off">
             <div class="form-group">
               <input type="text" name="search" id="gc-search">
             </div>
