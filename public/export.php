@@ -35,11 +35,11 @@ if (isset($_GET['id'])) {
     exit();
   }
 }
-else if (isset($_POST['json'])) {
+else {
   header('Content-type: application/json');
 
   try {
-    $json = json_decode($_POST['json']);
+    $json = json_decode(file_get_contents('php://input'));
     if (is_null($json)) {
       throw new ErrorException(json_last_error_msg());
     }

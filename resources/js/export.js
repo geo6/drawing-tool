@@ -30,26 +30,31 @@ export default function (event) {
     });
 
     fetch('export.php', {
-        method: 'POST',
-        body: JSON.stringify({
-            json
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                json
+            })
         })
-    }, json => {
-        if (typeof json.id !== 'undefined' && typeof json.filename !== 'undefined') {
-            $('#main').append('<div id=\'main-download\'><a href=\'export.php?id=' + json.id + '\'>Download <em>' + json.filename + '</em></a></div>');
+        .then(response => response.json())
+        .then(json => {
+            if (typeof json.id !== 'undefined' && typeof json.filename !== 'undefined') {
+                $('#main').append('<div id=\'main-download\'><a href=\'export.php?id=' + json.id + '\'>Download <em>' + json.filename + '</em></a></div>');
 
-            if (typeof json.validGeometry !== 'undefined') {
-                $('#main-download').append('<p><strong>Warning:</strong> Your geometry was validated by PostGIS.</p>');
+                if (typeof json.validGeometry !== 'undefined') {
+                    $('#main-download').append('<p><strong>Warning:</strong> Your geometry was validated by PostGIS.</p>');
 
-                var array = window.app.features.getArray();
-                for (var i = 0; i < json.validGeometry.length; i++) {
-                    var geom = (new GeoJSON()).readGeometry(json.validGeometry[i], {
-                        dataProjection: 'EPSG:4326',
-                        featureProjection: window.app.map.getView().getProjection()
-                    });
-                    array[i].setGeometry(geom);
+                    var array = window.app.features.getArray();
+                    for (var i = 0; i < json.validGeometry.length; i++) {
+                        var geom = (new GeoJSON()).readGeometry(json.validGeometry[i], {
+                            dataProjection: 'EPSG:4326',
+                            featureProjection: window.app.map.getView().getProjection()
+                        });
+                        array[i].setGeometry(geom);
+                    }
                 }
             }
-        }
-    });
+        });
 }
