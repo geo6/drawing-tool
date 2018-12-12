@@ -71,7 +71,7 @@
         </div>
       </div>
     </div>
-    <script src="./drawing-tool.js"></script>
+    <script src="./js/drawing-tool.js"></script>
     <script>
     </script>
   </body>
