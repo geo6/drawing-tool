@@ -1,4 +1,4 @@
-import '../css/style.css';
+import '../sass/style.scss';
 
 import initMap from './map';
 import {
@@ -28,4 +28,6 @@ $(document).ready(() => {
 
     $('#main > form').on('submit', exportFunction);
     $('#gc > form').on('submit', geocodeFunction);
+
+    $('body').addClass('loaded');
 });
