@@ -67,12 +67,10 @@
             </div>
           </form>
           <div id="gc-result"></div>
-          <div style="text-align: right; font-size: smaller;">Data © <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</div>
+          <div style="text-align: right; font-size: smaller;">Data © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</div>
         </div>
       </div>
     </div>
     <script src="./js/drawing-tool.js"></script>
-    <script>
-    </script>
   </body>
 </html>
