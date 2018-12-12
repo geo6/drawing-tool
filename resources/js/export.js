@@ -29,8 +29,11 @@ export default function (event) {
         featureProjection: window.app.map.getView().getProjection()
     });
 
-    $.post('export.php', {
-        json: json
+    fetch('export.php', {
+        method: 'POST',
+        body: JSON.stringify({
+            json
+        })
     }, json => {
         if (typeof json.id !== 'undefined' && typeof json.filename !== 'undefined') {
             $('#main').append('<div id=\'main-download\'><a href=\'export.php?id=' + json.id + '\'>Download <em>' + json.filename + '</em></a></div>');
