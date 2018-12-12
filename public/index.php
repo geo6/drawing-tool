@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>Drawing Tool</title>
-    <link rel="stylesheet" href="css/ol.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="./drawing-tool.css" type="text/css">
   </head>
   <body>
     <div id="map" class="map">
@@ -71,6 +70,7 @@
         </div>
       </div>
     </div>
-    <script src="./js/drawing-tool.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="./drawing-tool.js"></script>
   </body>
 </html>
