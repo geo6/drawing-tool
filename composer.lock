@@ -4,8 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93778d7d75236dcc595b82b26da65692",
+    "content-hash": "27ea789b6d26fe53e1043df95b0f4b48",
     "packages": [
+        {
+            "name": "geo6/php-gdal-wrapper",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geo6/php-gdal-wrapper.git",
+                "reference": "956a0460c54b36c9c7d0fd2011c7ed114d72140c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geo6/php-gdal-wrapper/zipball/956a0460c54b36c9c7d0fd2011c7ed114d72140c",
+                "reference": "956a0460c54b36c9c7d0fd2011c7ed114d72140c",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/process": "^3.3|^4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Geo6\\GDAL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Beliën",
+                    "email": "jbe@geo6.be"
+                }
+            ],
+            "description": "PHP Library to use GDAL functions",
+            "time": "2018-09-28T15:13:54+00:00"
+        },
         {
             "name": "symfony/polyfill-ctype",
             "version": "v1.10.0",
@@ -63,6 +102,55 @@
                 "portable"
             ],
             "time": "2018-08-06T14:22:27+00:00"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "2b341009ccec76837a7f46f59641b431e4d4c2b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/2b341009ccec76837a7f46f59641b431e4d4c2b0",
+                "reference": "2b341009ccec76837a7f46f59641b431e4d4c2b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-11-20T16:22:05+00:00"
         },
         {
             "name": "symfony/yaml",

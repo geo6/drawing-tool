@@ -10,6 +10,7 @@
     }
   ],
   "require": {
-    "symfony/yaml": "4.2.1"
+    "symfony/yaml": "4.2.1",
+    "geo6/php-gdal-wrapper": "1.1.0"
   }
 }
