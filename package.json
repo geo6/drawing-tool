@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
-    "sass": "^1.17.2"
+    "sass": "^1.17.3"
   },
   "dependencies": {
     "ol": "^5.3.1"
