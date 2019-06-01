@@ -4,7 +4,7 @@
   "description": "Draw an area and export it using ogr2ogr in several formats",
   "license": "GPL-3.0-or-later",
   "require": {
-    "symfony/yaml": "4.2.7",
+    "symfony/yaml": "4.3.0",
     "geo6/php-gdal-wrapper": "1.1.0"
   },
   "scripts": {
