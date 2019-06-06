@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4967036d1a6360d1af69503d9ddfcb3",
+    "content-hash": "df2d0d748133c291cb8c39371945602c",
     "packages": [
         {
             "name": "geo6/php-gdal-wrapper",
