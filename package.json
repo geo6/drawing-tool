@@ -1,10 +1,6 @@
 {
   "name": "drawing-tool",
   "private": true,
-  "author": {
-    "name": "Jonathan Beliën",
-    "email": "jbe@geo6.be"
-  },
   "scripts": {
     "watch": "parcel watch --out-dir=public/ --out-file=drawing-tool.js resources/js/index.js",
     "build": "parcel build --out-dir=public/ --out-file=drawing-tool.js --no-source-maps resources/js/index.js"
@@ -14,6 +10,6 @@
     "sass": "^1.20.3"
   },
   "dependencies": {
-    "ol": "^5.3.3"
+    "ol": "5.3.3"
   }
 }
