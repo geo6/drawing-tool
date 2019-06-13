@@ -5,7 +5,8 @@ use Geo6\GDAL\ogr2ogr;
 /**
  *
  */
-function export($source, $file, $format, $srs = 'EPSG:4326', $params = array()) {
+function export($source, $file, $format, $srs = 'EPSG:4326', $params = array())
+{
   global $warnings;
 
   $dir = dirname($file);
@@ -33,7 +34,9 @@ function export($source, $file, $format, $srs = 'EPSG:4326', $params = array()) 
   }
 
   try {
-    if (!file_exists($dir) || !is_dir($dir)) { mkdir($dir, 0777, TRUE); }
+    if (!file_exists($dir) || !is_dir($dir)) {
+      mkdir($dir, 0777, TRUE);
+    }
 
     $ogr2ogr = new ogr2ogr($file, $source);
     $ogr2ogr->setOption('f', $format);
@@ -41,6 +44,16 @@ function export($source, $file, $format, $srs = 'EPSG:4326', $params = array()) 
     if ($srs !== 'EPSG:4326') {
       $ogr2ogr->setOption('s_srs', 'EPSG:4326');
       $ogr2ogr->setOption('t_srs', $srs);
+    }
+
+    foreach ($params as $key => $param) {
+      if (is_array($param)) {
+        foreach ($param as $p) {
+          $ogr2ogr->setOption($key, $p);
+        }
+      } else {
+        $ogr2ogr->setOption($key, $param);
+      }
     }
 
     $ogr2ogr->run();
