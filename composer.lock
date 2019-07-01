@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df2d0d748133c291cb8c39371945602c",
+    "content-hash": "549a1642e6cb111393a4817bea82430c",
     "packages": [
         {
             "name": "geo6/php-gdal-wrapper",
@@ -154,7 +154,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.3.0",
+            "version": "v4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
