@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3",
-    "sass": "^1.22.9"
+    "sass": "^1.22.10"
   },
   "dependencies": {
     "ol": "5.3.3"
