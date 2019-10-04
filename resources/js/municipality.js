@@ -1,49 +1,50 @@
-import GeoJSON from 'ol/format/GeoJSON';
-import Vector from 'ol/source/Vector';
+import GeoJSON from "ol/format/GeoJSON";
+import Vector from "ol/source/Vector";
 
-import {
-    formatArea
-} from './format';
+import { formatArea } from "./format";
 
 /**
  *
  */
-export function load () {
-    fetch('./data/municipalities.json')
-        .then(response => response.json())
-        .then(json => {
-            window.app.municipality = new Vector({
-                features: (new GeoJSON()).readFeatures(json, {
-                    dataProjection: 'EPSG:4326',
-                    featureProjection: window.app.map.getView().getProjection()
-                })
-            });
-        });
+export function load() {
+  fetch("./data/municipalities.json")
+    .then(response => response.json())
+    .then(json => {
+      window.app.municipality = new Vector({
+        features: new GeoJSON().readFeatures(json, {
+          dataProjection: "EPSG:4326",
+          featureProjection: window.app.map.getView().getProjection()
+        })
+      });
+    });
 }
 
 /**
  *
  */
-export function onChange () {
-    $('#geometry').val('');
-    $('#main-download').remove();
+export function onChange() {
+  $("#geometry").val("");
+  $("#main-download").remove();
 
-    window.app.features.clear();
-    $('#btn-create-export').prop('disabled', true);
+  window.app.features.clear();
+  $("#btn-create-export").prop("disabled", true);
 
-    window.app.map.removeInteraction(window.app.interaction.draw);
-    window.app.map.removeInteraction(window.app.interaction.modify);
+  window.app.map.removeInteraction(window.app.interaction.draw);
+  window.app.map.removeInteraction(window.app.interaction.modify);
 
-    if ($('#municipality').val() !== '') {
-        const mun = window.app.municipality.getFeatureById($(this).val());
+  if ($("#municipality").val() !== "") {
+    const mun = window.app.municipality.getFeatureById($(this).val());
 
-        window.app.features.push(mun);
-        window.app.map.getView().fit(mun.getGeometry());
+    window.app.features.push(mun);
+    window.app.map.getView().fit(mun.getGeometry());
 
-        const output = formatArea(mun.getGeometry());
+    const output = formatArea(mun.getGeometry());
 
-        $('#main-infos-area').show().find('span').html(output);
+    $("#main-infos-area")
+      .show()
+      .find("span")
+      .html(output);
 
-        $('#btn-create-export').prop('disabled', false);
-    }
+    $("#btn-create-export").prop("disabled", false);
+  }
 }

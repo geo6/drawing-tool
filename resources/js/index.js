@@ -1,33 +1,33 @@
-import '../sass/style.scss';
+import "../sass/style.scss";
 
-import initMap from './map';
+import initMap from "./map";
 import {
-    addInteraction,
-    load as loadFeature,
-    onChange as onChangeFeature
-} from './draw';
-import exportFunction from './export';
-import geocodeFunction from './geocode';
+  addInteraction,
+  load as loadFeature,
+  onChange as onChangeFeature
+} from "./draw";
+import exportFunction from "./export";
+import geocodeFunction from "./geocode";
 import {
-    load as loadMunicipality,
-    onChange as onChangeMunicipality
-} from './municipality';
+  load as loadMunicipality,
+  onChange as onChangeMunicipality
+} from "./municipality";
 
 window.app = window.app || {};
 
 $(document).ready(() => {
-    initMap();
+  initMap();
 
-    addInteraction();
+  addInteraction();
 
-    loadFeature();
-    loadMunicipality();
+  loadFeature();
+  loadMunicipality();
 
-    $('#geometry').on('change', onChangeFeature);
-    $('#municipality').on('change', onChangeMunicipality);
+  $("#geometry").on("change", onChangeFeature);
+  $("#municipality").on("change", onChangeMunicipality);
 
-    $('#main > form').on('submit', exportFunction);
-    $('#gc > form').on('submit', geocodeFunction);
+  $("#main > form").on("submit", exportFunction);
+  $("#gc > form").on("submit", geocodeFunction);
 
-    $('body').addClass('loaded');
+  $("body").addClass("loaded");
 });
