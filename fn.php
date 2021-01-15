@@ -20,6 +20,7 @@ function export($source, $file, $format, $srs = 'EPSG:4326', $params = array())
       $file .= ".gml";
       break;
     case "KML":
+    case "LIBKML":
       $file .= ".kml";
       break;
     case "MapInfo File":
@@ -39,7 +40,7 @@ function export($source, $file, $format, $srs = 'EPSG:4326', $params = array())
     }
 
     $ogr2ogr = new ogr2ogr($file, $source);
-    $ogr2ogr->setOption('f', $format);
+    $ogr2ogr->setOption('f', $format === 'KML' ? 'LIBKML' : $format);
 
     if ($srs !== 'EPSG:4326') {
       $ogr2ogr->setOption('s_srs', 'EPSG:4326');
