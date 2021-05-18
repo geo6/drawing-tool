@@ -6,7 +6,7 @@
     "build": "parcel build --out-dir=public/ --out-file=drawing-tool.js --no-source-maps resources/js/index.js"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
+    "parcel-bundler": "^1.12.5",
     "sass": "^1.32.13"
   },
   "dependencies": {
