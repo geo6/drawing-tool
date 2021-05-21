@@ -39,6 +39,4 @@ export default function() {
       zoom: 8
     })
   });
-
-  console.log(VERSION);
 }
