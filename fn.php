@@ -62,3 +62,27 @@ function export($source, $file, $format, $srs = 'EPSG:4326', $params = array())
     $warnings[] = $e->getMessage();
   }
 }
+
+/**
+ *
+ */
+function export_proximus($kml, $file) {
+  global $warnings;
+
+  if (!file_exists($kml) || !is_readable($kml)) {
+    $warnings[] = 'Can\'t open KML file to generate Proximus file.';
+  } else {
+    $xml = simplexml_load_string(file_get_contents($kml));
+
+    $coordinates = (string) $xml->Document->Document->Placemark->Polygon->outerBoundaryIs->LinearRing->coordinates;
+    $coordinates = explode(PHP_EOL, $coordinates);
+
+    $filter = array_filter(array_map(function($coords) { return trim($coords); }, $coordinates), function ($coords) { return strlen($coords) > 0; });
+
+    $transform = array_map(function ($coords) { $c = explode(',', $coords); return implode(',', [$c[1], $c[0]]); }, $filter);
+
+    $result = implode(' ', $transform);
+
+    file_put_contents($file, '<polygon>' . $result . '</polygon>');
+  }
+}

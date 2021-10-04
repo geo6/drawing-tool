@@ -122,6 +122,10 @@ else {
         }
     }
 
+    // Dedicated export for Proximus (based on KML)
+    $fname = $time.'Proximus.txt';
+    export_proximus($dir.'/KML/'.$time.'WGS84.kml', $dir.'/'.$fname);
+
     try {
         $zip = new ZipArchive;
         $zipOpen = $zip->open($dir.'/'.$time.'.zip', ZipArchive::CREATE);
@@ -143,6 +147,8 @@ else {
         foreach ($glob as $g) {
             $zip->addFile($g, basename(dirname($g)).'/'.basename($g));
         }
+
+        $zip->addFile($dir.'/'.$time.'Proximus.txt', $time.'Proximus.txt');
 
         $zip->close();
 
