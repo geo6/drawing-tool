@@ -7,7 +7,7 @@ import { formatArea } from "./format";
  *
  */
 export function load() {
-  fetch("./data/municipalities.json")
+  fetch("./data/municipalities.geojson")
     .then(response => response.json())
     .then(json => {
       window.app.municipality = new Vector({
@@ -23,7 +23,7 @@ export function load() {
  *
  */
 export function onChange() {
-  $("#geometry").val("");
+  $("#geometry, #province").val("");
   $("#main-download").remove();
 
   window.app.features.clear();
@@ -36,7 +36,9 @@ export function onChange() {
     const mun = window.app.municipality.getFeatureById($(this).val());
 
     window.app.features.push(mun);
-    window.app.map.getView().fit(mun.getGeometry());
+    window.app.map
+      .getView()
+      .fit(mun.getGeometry(), { padding: [50, 50, 50, 50] });
 
     const output = formatArea(mun.getGeometry());
 
