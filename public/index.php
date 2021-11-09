@@ -31,7 +31,7 @@
                             <select id="municipality">
                                 <option value=""></option>
 <?php
-$municipalities = json_decode(file_get_contents('./data/municipalities.json'));
+$municipalities = json_decode(file_get_contents('./data/municipalities.geojson'));
 function cmp($a, $b)
 {
     return strcasecmp($a->properties->name, $b->properties->name);
@@ -40,6 +40,26 @@ usort($municipalities->features, 'cmp');
 foreach ($municipalities->features as $m) {
     ?>
                                 <option value="<?= $m->id ?>"><?= htmlentities($m->properties->name) ?></option>
+<?php
+}
+?>
+                            </select>
+                        </div>
+
+                        <div style="text-align: center;">
+                            or
+                        </div>
+
+                        <div class="form-group">
+                            <label for="province"><?= _('Select a province :') ?></label>
+                            <select id="province">
+                                <option value=""></option>
+<?php
+$provinces = json_decode(file_get_contents('./data/provinces.geojson'));
+usort($provinces->features, 'cmp');
+foreach ($provinces->features as $p) {
+    ?>
+                                <option value="<?= $p->id ?>"><?= htmlentities($p->properties->name) ?></option>
 <?php
 }
 ?>
