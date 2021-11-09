@@ -42,7 +42,7 @@ export function load() {
  *
  */
 export function onChange() {
-  $("#municipality").val("");
+  $("#municipality, #province").val("");
   $("#main-download").remove();
 
   window.app.features.clear();

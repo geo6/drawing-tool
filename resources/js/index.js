@@ -12,6 +12,10 @@ import {
   load as loadMunicipality,
   onChange as onChangeMunicipality
 } from "./municipality";
+import {
+  load as loadProvince,
+  onChange as onChangeProvince
+} from "./province";
 
 window.app = window.app || {};
 
@@ -22,9 +26,11 @@ $(document).ready(() => {
 
   loadFeature();
   loadMunicipality();
+  loadProvince();
 
   $("#geometry").on("change", onChangeFeature);
   $("#municipality").on("change", onChangeMunicipality);
+  $("#province").on("change", onChangeProvince);
 
   $("#main > form").on("submit", exportFunction);
   $("#gc > form").on("submit", geocodeFunction);
